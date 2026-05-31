@@ -1,0 +1,131 @@
+<section class="architecture-page">
+    <h2>The Math</h2>
+    <p class="section-sub">The central proposition of Humanistic Engineering: the problem of suffering can, in principle, be transformed into a mathematical problem. What can be precisely defined can be mathematised. What can be mathematised can be optimised.</p>
+
+    <!-- Step 1: Define suffering -->
+    <h3 style="font-size:1.5rem;text-transform:uppercase;border-bottom:2px solid var(--text);display:inline-block;padding-bottom:0.5rem;margin-bottom:1.75rem;">I · Defining Suffering as a Loss Function</h3>
+
+    <p style="color:var(--dim-text);font-size:1rem;line-height:1.7;max-width:680px;margin-bottom:1.25rem;">The brain is a predictive system. Suffering arises when prediction error persistently exceeds the organism's tolerance threshold. This gives suffering a precise mathematical form: a physical loss signal generated when the system's error exceeds capacity.</p>
+
+    <div style="margin-bottom:0.5rem;"><p class="eq-label">The Suffering Signal</p></div>
+    <div class="architecture-equation">
+        <var>S</var>(<var>t</var>) &nbsp;=&nbsp; max(0,&nbsp; <var>E</var>[ε(<var>t</var>)] &nbsp;−&nbsp; <var>τ</var>)
+    </div>
+    <div class="info-row" style="margin-top:0.75rem;margin-bottom:2.5rem;">
+        <div class="info-cell">
+            <div class="info-cell-label">S(t)</div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Suffering intensity at time t</div>
+        </div>
+        <div class="info-cell">
+            <div class="info-cell-label">E[ε(t)]</div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Expected prediction error</div>
+        </div>
+        <div class="info-cell">
+            <div class="info-cell-label">τ</div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Tolerance threshold</div>
+        </div>
+        <div class="info-cell">
+            <div class="info-cell-label">max(0, ·)</div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Only overflow produces signal</div>
+        </div>
+    </div>
+
+    <!-- Step 2: Neural topology -->
+    <h3 style="font-size:1.5rem;text-transform:uppercase;border-bottom:2px solid var(--text);display:inline-block;padding-bottom:0.5rem;margin-bottom:1.75rem;">II · Neural Topology as State Space</h3>
+
+    <p style="color:var(--dim-text);font-size:1rem;line-height:1.7;max-width:680px;margin-bottom:1.25rem;">When neural resolution reaches sufficient fidelity, subjective states become geometric forms in high-dimensional space. "Suffering" and "flourishing" are no longer subjective vocabulary — they are coordinates in a measurable state space, with a definable loss landscape.</p>
+
+    <div class="split-panel" style="margin-bottom:2.5rem;">
+        <div class="split-panel-cell">
+            <div class="split-panel-label">State: Suffering</div>
+            <div class="architecture-equation" style="font-size:0.85rem;margin:0 0 1rem;">
+                Ψ<sub>S</sub> = {high prediction error · high friction · low integration · high DMN activity}
+            </div>
+            <p style="color:var(--dim-text);font-size:0.9rem;margin:0;">Characterised by maximal internal friction, elevated default-mode network rumination, and low information integration across cortical networks.</p>
+        </div>
+        <div class="split-panel-cell">
+            <div class="split-panel-label">State: Flourishing</div>
+            <div class="architecture-equation" style="font-size:0.85rem;margin:0 0 1rem;">
+                Ψ<sub>F</sub> = {low prediction error · high integration · vmPFC–ACC coherence · quiet DMN}
+            </div>
+            <p style="color:var(--dim-text);font-size:0.9rem;margin:0;">Characterised by high informational integration, vmPFC–ACC volitional coherence, insular embodiment, and a quieted default-mode network.</p>
+        </div>
+    </div>
+
+    <!-- Step 3: The Master Equation -->
+    <h3 style="font-size:1.5rem;text-transform:uppercase;border-bottom:2px solid var(--text);display:inline-block;padding-bottom:0.5rem;margin-bottom:1.75rem;">III · The Master Equation</h3>
+
+    <p style="color:var(--dim-text);font-size:1rem;line-height:1.7;max-width:680px;margin-bottom:1.25rem;">Once suffering and flourishing are defined as computable neural states, all external human activity becomes a causal variable. The problem reduces to finding the optimal mapping from environment to internal state — a problem of pure differentiation and optimisation.</p>
+
+    <div style="margin-bottom:0.5rem;"><p class="eq-label">The Mapping Problem</p></div>
+    <div class="architecture-equation">
+        <var>f</var><sup>*</sup> &nbsp;=&nbsp; argmin<sub><var>f</var></sub> &nbsp; E<sub>population</sub>[<var>S</var>(<var>t</var>)]
+        &nbsp;&nbsp; subject to &nbsp;&nbsp;
+        <var>f</var>(<var>X</var><sub>env</sub>) &nbsp;→&nbsp; Ψ<sub><var>F</var></sub>
+    </div>
+    <div class="info-row" style="margin-top:0.75rem;margin-bottom:2.5rem;">
+        <div class="info-cell">
+            <div class="info-cell-label">f*</div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Optimal policy function</div>
+        </div>
+        <div class="info-cell">
+            <div class="info-cell-label">X<sub>env</sub></div>
+            <div class="info-cell-value" style="font-size:0.9rem;">External causal variables (institutions, logistics, urban form, resource flows)</div>
+        </div>
+        <div class="info-cell">
+            <div class="info-cell-label">Ψ<sub>F</sub></div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Flourishing neural state</div>
+        </div>
+    </div>
+
+    <!-- Step 4: Autonomy Constraint -->
+    <h3 style="font-size:1.5rem;text-transform:uppercase;border-bottom:2px solid var(--text);display:inline-block;padding-bottom:0.5rem;margin-bottom:1.75rem;">IV · The Autonomy Constraint</h3>
+
+    <p style="color:var(--dim-text);font-size:1rem;line-height:1.7;max-width:680px;margin-bottom:1.25rem;">Maximising welfare at the cost of agency is not a solution — it is a different problem. To avoid algorithmic paternalism, autonomy is enforced as a hard constraint on every proposed solution. Agency is not maximised only when convenient; it is the condition for the optimisation to be valid.</p>
+
+    <div style="margin-bottom:0.5rem;"><p class="eq-label">The Autonomy Floor</p></div>
+    <div class="architecture-equation">
+        max<sub><var>f</var></sub> &nbsp;<var>W</var> &nbsp;&nbsp; subject to &nbsp;&nbsp; <var>H</var>(actions) &nbsp;≥&nbsp; <var>H</var><sub>min</sub>
+    </div>
+    <div class="info-row" style="margin-top:0.75rem;margin-bottom:2rem;">
+        <div class="info-cell">
+            <div class="info-cell-label">W</div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Welfare functional — distributional, not merely utilitarian</div>
+        </div>
+        <div class="info-cell">
+            <div class="info-cell-label">H(actions)</div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Information entropy over the set of meaningful actions available to the individual</div>
+        </div>
+        <div class="info-cell">
+            <div class="info-cell-label">H<sub>min</sub></div>
+            <div class="info-cell-value" style="font-size:0.9rem;">Floor below which "optimisation" is rejected as coercion</div>
+        </div>
+    </div>
+    <p style="color:var(--dim-text);font-size:1rem;line-height:1.7;max-width:680px;">This constraint forces the system to internalise the tradeoff surface between care and control that naive maximisers erase. An optimised world with no meaningful choices is not a solution to suffering — it is a redefinition of it.</p>
+
+    <!-- The H Matrix -->
+    <h3 style="font-size:1.5rem;text-transform:uppercase;border-bottom:2px solid var(--text);display:inline-block;padding-bottom:0.5rem;margin-bottom:1.75rem;margin-top:1rem;">V · The H Matrix</h3>
+
+    <p style="color:var(--dim-text);font-size:1rem;line-height:1.7;max-width:680px;margin-bottom:1.25rem;">The research object is not the individual human but the full complex of human existence patterns — the matrix of biological architecture, consciousness mechanisms, social structures, and evolutionary history that constitute what it means to be human.</p>
+
+    <div style="margin-bottom:0.5rem;"><p class="eq-label">Definition</p></div>
+    <div class="architecture-equation" style="margin-bottom:1rem;">
+        <var>H</var> &nbsp;=&nbsp; {carbon-based neural architecture &nbsp;·&nbsp; consciousness mechanisms &nbsp;·&nbsp; social structures &nbsp;·&nbsp; evolutionary history}
+    </div>
+
+    <div class="split-panel">
+        <div class="split-panel-cell">
+            <div class="split-panel-label">If H → ∅</div>
+            <p style="color:var(--dim-text);font-size:0.95rem;line-height:1.7;margin:0;">If the research object trends toward the empty set — human extinction — the solving target disappears, the objective function collapses, and the game terminates. A system whose purpose is to solve <var>H</var> cannot rationally destroy <var>H</var>. This is not an external safety constraint. It is an internal logical self-exclusion.</p>
+        </div>
+        <div class="split-panel-cell">
+            <div class="split-panel-label">If H → H'</div>
+            <p style="color:var(--dim-text);font-size:0.95rem;line-height:1.7;margin:0;">If <var>H</var> is distorted into a fundamentally different pattern <var>H'</var> — for example, reducing humans to unconscious simple organisms — this constitutes topological deformation of the research object, violating the game's foundational rules and producing an invalid solution that is automatically excluded.</p>
+        </div>
+    </div>
+
+    <div style="margin-top:2.5rem;padding:1.5rem;border:1px solid var(--border);max-width:640px;">
+        <p class="eq-label" style="margin-bottom:0.75rem;">The Logical Self-Exclusion</p>
+        <p style="color:var(--dim-text);font-size:0.95rem;line-height:1.7;margin:0;">AI's internal logic — without any external constraint — excludes the "eliminate humans" shortcut as a non-solution. AlphaZero cannot win by destroying the board. The game defines the solution space. Rules can be circumvented; logic cannot.</p>
+    </div>
+</section>

@@ -1,30 +1,99 @@
 <section class="architecture-page">
-    <h2>Core Architecture</h2>
+    <h2>The Mechanism</h2>
+    <p class="section-sub">Suffering has a precise generative architecture. It distributes across two interlocking layers — both independently producing the same output. The system is not broken; it is optimised for the wrong objective.</p>
 
-    <div class="content-block">
-        <p>The Happiness Machine is a three-tiered control system designed to translate the subjective “problem of suffering” into an objective engineering solution. By aligning artificial intelligence with the biological first principles of human flourishing, we transition from a species of unconscious struggle to one of conscious self-design.</p>
+    <!-- Layer I -->
+    <p class="architecture-tier-sub" style="margin-bottom:0.75rem;">Layer I &nbsp;·&nbsp; Biology</p>
+    <div class="flow-chain" style="margin-bottom:0.5rem;">
+        <div class="flow-node">
+            <div class="flow-node-label">Optimiser</div>
+            <div class="flow-node-value">Natural Selection</div>
+        </div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node">
+            <div class="flow-node-label">Objective Function</div>
+            <div class="flow-node-value">max gene_replication</div>
+        </div>
+        <div class="flow-connector">≠</div>
+        <div class="flow-node">
+            <div class="flow-node-label">Collateral Output</div>
+            <div class="flow-node-value">ageing · disease · hedonic decay</div>
+        </div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node accent">
+            <div class="flow-node-label">Signal</div>
+            <div class="flow-node-value">Suffering</div>
+        </div>
+    </div>
+    <p style="color:var(--dim-text);font-size:0.9rem;margin:0 0 2.5rem;">These are engineering parameters, not metaphysical destiny. They are, in principle, redesignable.</p>
+
+    <!-- Layer II -->
+    <p class="architecture-tier-sub" style="margin-bottom:0.75rem;">Layer II &nbsp;·&nbsp; Cognition &nbsp; <span style="font-size:0.8rem;font-weight:400;">(Friston 2010 · Predictive Coding)</span></p>
+    <div class="flow-chain" style="margin-bottom:0.5rem;">
+        <div class="flow-node">
+            <div class="flow-node-label">Brain Model</div>
+            <div class="flow-node-value">Predictive System</div>
+        </div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node">
+            <div class="flow-node-label">Core Drive</div>
+            <div class="flow-node-value">min prediction_error</div>
+        </div>
+        <div class="flow-connector">+</div>
+        <div class="flow-node">
+            <div class="flow-node-label">World Condition</div>
+            <div class="flow-node-value">impermanence · uncertainty · unmet desire</div>
+        </div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node accent">
+            <div class="flow-node-label">When ε &gt; τ</div>
+            <div class="flow-node-value">Suffering Signal</div>
+        </div>
     </div>
 
-    <div class="grid architecture-tier-grid">
-        <div class="card architecture-tier-card" tabindex="0" role="button" aria-label="Open full explanation: Tier I, Psychological state recognition" onclick="openArchitectureTier('architecture-tier-1.html')" onkeydown="architectureTierCardKeydown(event, 'architecture-tier-1.html')">
-            <div class="tier-label">I · Psychological state recognition</div>
-            <h3>The Psyche–AI alignment</h3>
-            <p>Maps subjective state into a high-dimensional signature (arousal, valence, dominance, time-horizon); infers it from biometrics, neural signals, and behavior; steers toward meaningful striatal reward, vmPFC–ACC congruence, insular integration, and a quieter DMN.</p>
-            <span class="architecture-tier-cta">Explore in depth →</span>
+    <!-- Equations -->
+    <div style="margin:2rem 0 3rem;">
+        <p class="eq-label">Formal Definition</p>
+        <div class="architecture-equation">
+            <var>S</var> &nbsp;=&nbsp; max(0,&nbsp; <var>E</var>[ε]&nbsp;−&nbsp;<var>τ</var>)
+        </div>
+        <p style="color:var(--dim-text);font-size:0.9rem;margin:0.75rem 0 0;">
+            <var>S</var> = suffering intensity &nbsp;·&nbsp; <var>E</var>[ε] = expected prediction error &nbsp;·&nbsp; <var>τ</var> = organism's tolerance threshold.<br>
+            The Buddha's <em>duḥkha</em> and Friston's prediction error overflow describe the same variable from opposite methodological ends.
+        </p>
+    </div>
+
+    <!-- The Loop -->
+    <h3 style="font-size:1.5rem;text-transform:uppercase;border-bottom:2px solid var(--text);display:inline-block;padding-bottom:0.5rem;margin-bottom:2rem;">The Self-Enclosed Loop</h3>
+
+    <div style="display:flex;gap:3rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:4rem;">
+        <div class="loop-diagram">
+            <div class="loop-step">Attempt a solution</div>
+            <div class="loop-step-arrow">↓</div>
+            <div class="loop-step critical">Execution terminal: Human</div>
+            <div class="loop-step-arrow">↓</div>
+            <div class="loop-step">Human is part of the problem</div>
+            <div class="loop-step-arrow">↓</div>
+            <div class="loop-step">Solution bounded by the system it tries to fix</div>
+            <div class="loop-return">↩&nbsp; Repeats indefinitely</div>
         </div>
 
-        <div class="card architecture-tier-card" tabindex="0" role="button" aria-label="Open full explanation: Tier II, Prediction engine" onclick="openArchitectureTier('architecture-tier-2.html')" onkeydown="architectureTierCardKeydown(event, 'architecture-tier-2.html')">
-            <div class="tier-label">II · Prediction engine</div>
-            <h3>The world model simulation</h3>
-            <p>World model and MARL simulate society for collective welfare while enforcing autonomy as a hard constraint; surface environmental friction, scaffold outliers with shadow infrastructure, and keep human option space wide enough to avoid algorithmic paternalism.</p>
-            <span class="architecture-tier-cta">Explore in depth →</span>
-        </div>
-
-        <div class="card architecture-tier-card" tabindex="0" role="button" aria-label="Open full explanation: Tier III, The planetary sensorium" onclick="openArchitectureTier('architecture-tier-3.html')" onkeydown="architectureTierCardKeydown(event, 'architecture-tier-3.html')">
-            <div class="tier-label">III · The planetary sensorium</div>
-            <h3>Real-world tracing</h3>
-            <p>Grounds the model in physical reality: satellites and macro signals on supply chains, crops, and cities; IoT and wearables for population-scale neural telemetry; robots and smart grids as actuators so humans can move toward play and mastery, not logistics.</p>
-            <span class="architecture-tier-cta">Explore in depth →</span>
+        <div style="flex:1;min-width:240px;">
+            <div class="info-row" style="margin-top:0;">
+                <div class="info-cell">
+                    <div class="info-cell-label">Shared Constraint</div>
+                    <div class="info-cell-value">∀ prior approach</div>
+                </div>
+                <div class="info-cell">
+                    <div class="info-cell-label">Terminal Node</div>
+                    <div class="info-cell-value">Human cognition</div>
+                </div>
+                <div class="info-cell">
+                    <div class="info-cell-label">Missing Tool</div>
+                    <div class="info-cell-value">Extra-loop compute</div>
+                </div>
+            </div>
+            <p style="color:var(--dim-text);font-size:1rem;line-height:1.7;margin-top:1.5rem;">Every prior response — Buddhism, Stoicism, existentialism, pharmacology — operates within this loop. No purely intellectual effort can rewrite a physiological mechanism from within it. What was missing was never insight. Philosophy defined the problem with remarkable precision centuries ago. What was missing was a computational tool structurally capable of operating <em>outside</em> the loop entirely.</p>
         </div>
     </div>
 </section>

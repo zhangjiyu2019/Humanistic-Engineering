@@ -15,39 +15,48 @@
         page_location: location.href
       });
     </script>
-    <title>The Happiness Machine</title>
+    <title>Humanistic Engineering</title>
     <meta name="description" content="A framework for AI-driven ontological optimization. Transitioning from the pursuit of happiness to its engineered baseline.">
-    <meta name="keywords" content="Happiness Machine, AI, Post-Scarcity, Ontological Engineering, Neuroscience">
+    <meta name="keywords" content="Humanistic Engineering, 人本工程学, AI, Post-Scarcity, Ontological Engineering, Neuroscience">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="site-hero">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
         <div class="logo-container">
             <a href="about.html" aria-label="About Team Pivot">
                 <img src="Pivot.png" alt="Pivot Studio Logo" class="logo">
             </a>
         </div>
 
-        <div class="hero-label">A Framework for AI-Driven Ontological Optimization</div>
-        <h1>The Happiness Machine</h1>
-        <p class="tagline">The "Problem of Suffering" is not a biological misfortune. It is a systemic engineering failure. We are transitioning from the pursuit of happiness to its engineered baseline.</p>
-        
+        <div class="hero-label" data-i18n="label">A Framework for AI-Driven Ontological Optimization</div>
+        <h1 data-i18n="title">HUMANISTIC ENGINEERING</h1>
+        <p class="tagline tagline-expand" data-i18n="tagline" onclick="loadComponent('intro.html', null)" title="Read the full argument">The "Problem of Suffering" is not a biological misfortune. It is a systemic engineering failure. We are transitioning from the pursuit of happiness to its engineered baseline.</p>
+
         <nav class="navigation">
-            <button type="button" id="nav-architecture" onclick="loadComponent('architecture.html', this)" class="nav-link active">Architecture</button>
-            <button onclick="loadComponent('timeline.html', this)" class="nav-link">Transition Timeline</button>
-            <button onclick="loadComponent('live-workspace.html', this)" class="nav-link">Live Workspace</button>
-            <button onclick="loadComponent('resources.html', this)" class="nav-link">Resources</button>
+            <button type="button" id="nav-architecture" onclick="loadComponent('architecture.html', this)" class="nav-link active" data-i18n="nav-architecture">The Mechanism</button>
+            <button onclick="loadComponent('prior-attempts.html', this)" class="nav-link" data-i18n="nav-prior">Prior Attempts</button>
+            <button onclick="loadComponent('timeline.html', this)" class="nav-link" data-i18n="nav-timeline">The Framework</button>
+            <button onclick="loadComponent('math.html', this)" class="nav-link" data-i18n="nav-math">The Math</button>
+            <button onclick="loadComponent('live-workspace.html', this)" class="nav-link" data-i18n="nav-workspace">Live Workspace</button>
+            <button onclick="loadComponent('resources.html', this)" class="nav-link" data-i18n="nav-resources">Resources</button>
         </nav>
     </header>
+
+    <!-- Language toggle -->
+    <div class="lang-toggle" role="group" aria-label="Language selection">
+        <button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="lang-zh" onclick="setLang('zh')">中</button>
+    </div>
 
     <div class="container" id="dynamic-content">
         </div>
 
     <section class="cta" id="cta-footer">
-        <h2>Join the Ontological Engineering</h2>
-        <p>Humanity does not need to abdicate agency to achieve this; instead, we collaborate with AI, taking its precise suggestions to seamlessly align global logistics with human necessity. We are seeking collaborators, neuroscientists, and systems engineers.</p>
-        <button onclick="loadComponent('collaboration.html', null)" class="btn">Initiate Collaboration</button>
+        <h2 data-i18n="cta-heading">Join the Ontological Engineering</h2>
+        <p data-i18n="cta-body">Humanity does not need to abdicate agency to achieve this; instead, we collaborate with AI, taking its precise suggestions to seamlessly align global logistics with human necessity. We are seeking collaborators, neuroscientists, and systems engineers.</p>
+        <button onclick="loadComponent('collaboration.html', null)" class="btn" data-i18n="cta-btn">Initiate Collaboration</button>
     </section>
 
     <script>
@@ -160,17 +169,6 @@
             });
         }
 
-        function openArchitectureTier(fileName) {
-            loadComponent(fileName, document.getElementById('nav-architecture'));
-        }
-
-        function architectureTierCardKeydown(event, fileName) {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                openArchitectureTier(fileName);
-            }
-        }
-
         async function loadComponent(fileName, buttonElement) {
             try {
                 const response = await fetch(fileName);
@@ -208,9 +206,212 @@
             }
         }
 
+        function togglePanel(id) {
+            const panel = document.getElementById(id);
+            const btn = panel.querySelector('.resources-panel-header');
+            const chevron = panel.querySelector('.resources-chevron');
+            const isOpen = panel.classList.contains('open');
+            panel.classList.toggle('open', !isOpen);
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            chevron.textContent = isOpen ? '+' : '−';
+        }
+
         window.onload = () => {
             loadComponent('architecture.html', document.getElementById('nav-architecture'));
         };
+
+        // ── Pixel Grid Background ─────────────────────────────────────────
+        (function initPixelGrid() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const CELL = 11, FILL = CELL - 1;
+
+            let W, H, cols, rows, bgCanvas = null;
+
+            // Each blob: position in cell-space, velocity in cells/frame, radius in cells
+            // sign +1 = white (bright centre), sign -1 = black (dark centre)
+            var blobs = [
+                { px: 0, py: 0, vx:  0.09, vy:  0.04, r: 50, r2: 0, sign: +1 },
+                { px: 0, py: 0, vx: -0.06, vy: -0.07, r: 36, r2: 0, sign: +1 },
+                { px: 0, py: 0, vx:  0.04, vy:  0.08, r: 24, r2: 0, sign: +1 },
+                { px: 0, py: 0, vx: -0.07, vy:  0.06, r: 56, r2: 0, sign: -1 },
+                { px: 0, py: 0, vx:  0.08, vy: -0.04, r: 40, r2: 0, sign: -1 },
+                { px: 0, py: 0, vx: -0.04, vy: -0.08, r: 28, r2: 0, sign: -1 },
+            ];
+
+            var startFrac = [
+                [0.18, 0.22], [0.75, 0.65], [0.55, 0.88],
+                [0.48, 0.30], [0.85, 0.18], [0.20, 0.68],
+            ];
+
+            // Mouse blob: a small white metaball that follows the cursor
+            var mouse = { px: -999, py: -999, tx: -999, ty: -999, amp: 0, active: false };
+            var MOUSE_R = 18, MOUSE_R2 = MOUSE_R * MOUSE_R;
+
+            canvas.addEventListener('mousemove', function(e) {
+                var rect = canvas.getBoundingClientRect();
+                mouse.tx = (e.clientX - rect.left) / CELL;
+                mouse.ty = (e.clientY - rect.top)  / CELL;
+                if (!mouse.active) { mouse.px = mouse.tx; mouse.py = mouse.ty; }
+                mouse.active = true;
+            });
+            canvas.addEventListener('mouseleave', function() { mouse.active = false; });
+
+            function initBlobs() {
+                for (var i = 0; i < blobs.length; i++) {
+                    var b = blobs[i];
+                    b.px = startFrac[i][0] * cols;
+                    b.py = startFrac[i][1] * rows;
+                    b.r2 = b.r * b.r;
+                }
+            }
+
+            function buildBg() {
+                bgCanvas = document.createElement('canvas');
+                bgCanvas.width = W; bgCanvas.height = H;
+                var bx = bgCanvas.getContext('2d');
+                bx.fillStyle = '#050508';
+                bx.fillRect(0, 0, W, H);
+                var off = Math.floor(FILL / 2);
+                bx.fillStyle = 'rgba(255,255,255,0.065)';
+                for (var r = 0; r < rows; r++)
+                    for (var c = 0; c < cols; c++)
+                        bx.fillRect(c * CELL + off, r * CELL + off, 1, 1);
+            }
+
+            function resize() {
+                W = canvas.width  = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+                cols = Math.ceil(W / CELL) + 1;
+                rows = Math.ceil(H / CELL) + 1;
+                buildBg();
+                initBlobs();
+            }
+
+            function update() {
+                for (var i = 0; i < blobs.length; i++) {
+                    var b = blobs[i];
+                    b.px += b.vx;
+                    b.py += b.vy;
+                    // Bounce: blobs peek in from edges, never fully exit
+                    var m = b.r * 0.4;
+                    if (b.px < -m)       { b.px = -m;       b.vx =  Math.abs(b.vx); }
+                    if (b.px > cols + m) { b.px = cols + m; b.vx = -Math.abs(b.vx); }
+                    if (b.py < -m)       { b.py = -m;       b.vy =  Math.abs(b.vy); }
+                    if (b.py > rows + m) { b.py = rows + m; b.vy = -Math.abs(b.vy); }
+                }
+                // Mouse blob: ease toward cursor, fade in/out
+                mouse.amp += mouse.active ? (1 - mouse.amp) * 0.06 : (0 - mouse.amp) * 0.05;
+                mouse.px  += (mouse.tx - mouse.px) * 0.10;
+                mouse.py  += (mouse.ty - mouse.py) * 0.10;
+            }
+
+            function draw() {
+                if (bgCanvas) ctx.drawImage(bgCanvas, 0, 0);
+
+                for (var r = 0; r < rows; r++) {
+                    for (var c = 0; c < cols; c++) {
+                        // Sum blob contributions at this cell
+                        var field = 0;
+                        for (var i = 0; i < blobs.length; i++) {
+                            var b = blobs[i];
+                            var dx = c - b.px, dy = r - b.py;
+                            var d2 = dx*dx + dy*dy;
+                            if (d2 >= b.r2) continue;
+                            var t = 1 - d2 / b.r2;
+                            field += b.sign * t * t;  // quartic falloff
+                        }
+                        // Mouse blob contribution
+                        if (mouse.amp > 0.01) {
+                            var dx = c - mouse.px, dy = r - mouse.py;
+                            var d2 = dx*dx + dy*dy;
+                            if (d2 < MOUSE_R2) {
+                                var t = 1 - d2 / MOUSE_R2;
+                                field += mouse.amp * t * t;
+                            }
+                        }
+
+                        if (field > 0.015) {
+                            // White blob: draw bright square
+                            var n = Math.min(field, 1);
+                            n = n * n * (3 - 2 * n);
+                            ctx.globalAlpha = n;
+                            ctx.fillStyle = '#ffffff';
+                            ctx.fillRect(c * CELL, r * CELL, FILL, FILL);
+                        } else if (field < -0.015) {
+                            // Black blob: paint over the static dot with background colour
+                            var n = Math.min(-field, 1);
+                            n = n * n * (3 - 2 * n);
+                            ctx.globalAlpha = n;
+                            ctx.fillStyle = '#050508';
+                            ctx.fillRect(c * CELL, r * CELL, CELL, CELL);
+                        }
+                    }
+                }
+                ctx.globalAlpha = 1;
+            }
+
+            function frame() {
+                update();
+                draw();
+                requestAnimationFrame(frame);
+            }
+
+            function init() {
+                resize();
+                requestAnimationFrame(frame);
+            }
+
+            window.addEventListener('resize', resize);
+            init();
+        })();
+
+        // ── i18n ──────────────────────────────────────────────────────────
+        const TRANSLATIONS = {
+            en: {
+                'label':            'A Framework for AI-Driven Ontological Optimization',
+                'title':            'HUMANISTIC ENGINEERING',
+                'tagline':          'The "Problem of Suffering" is not a biological misfortune. It is a systemic engineering failure. We are transitioning from the pursuit of happiness to its engineered baseline.',
+                'nav-architecture': 'The Mechanism',
+                'nav-prior':        'Prior Attempts',
+                'nav-timeline':     'The Framework',
+                'nav-math':         'The Math',
+                'nav-workspace':    'Live Workspace',
+                'nav-resources':    'Resources',
+                'cta-heading':      'Join the Ontological Engineering',
+                'cta-body':         'Humanity does not need to abdicate agency to achieve this; instead, we collaborate with AI, taking its precise suggestions to seamlessly align global logistics with human necessity. We are seeking collaborators, neuroscientists, and systems engineers.',
+                'cta-btn':          'Initiate Collaboration',
+            },
+            zh: {
+                'label':            '人工智能驱动的本体论优化框架',
+                'title':            '人本工程学',
+                'tagline':          '“苦难问题”并非生物性的不幸，而是系统性的工程失败。我们正从对幸福的追求，过渡至将其作为工程化基准线。',
+                'nav-architecture': '机制',
+                'nav-prior':        '先行方案',
+                'nav-timeline':     '框架',
+                'nav-math':         '数学',
+                'nav-workspace':    '实时工作区',
+                'nav-resources':    '资源',
+                'cta-heading':      '加入本体论工程',
+                'cta-body':         '人类无需放弃自主权来实现这一目标——我们与人工智能协作，采纳其精确建议，将全球物流与人类需求无缝对齐。我们正在寻找合作者、神经科学家与系统工程师。',
+                'cta-btn':          '发起合作',
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            const t = TRANSLATIONS[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) el.textContent = t[key];
+            });
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+            document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+        }
     </script>
 </body>
 </html>

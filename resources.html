@@ -1,133 +1,204 @@
-<section>
-    <h2>Web resources</h2>
+<section class="resources-page">
 
-    <div class="content-block" style="margin-bottom: 2rem;">
-        <p>External writing and tools we find useful—OSINT, spatial intelligence, AI agents, and how public data composes into actionable understanding.</p>
-    </div>
+    <div class="resources-accordion">
 
-    <div class="grid">
-        <div class="card web-resources-card">
-            <div class="tier-label">Curated resources</div>
-            <ul class="web-resources-list">
-                <li>
-                    <a href="https://www.spatialintelligence.ai/p/the-intelligence-monopoly-is-over" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>The Intelligence Monopoly Is Over</strong> — Bilawal Sidhu on reconstructing major events from open data, layered on a 3D globe, and how AI agents collapse what used to take quarters into days. <span class="web-resource-domain">spatialintelligence.ai</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://earth.google.com/" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Google Earth</strong> — Interactive 3D globe: satellite and aerial imagery, terrain, and layers for exploring the planet at every scale—useful ground truth for spatial reasoning and OSINT-style context. <span class="web-resource-domain">earth.google.com</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.illustris-project.org/" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Illustris</strong> — Large cosmological simulation of galaxy formation: high-resolution volumes, physical models, and public data—useful for thinking about emergence and structure at planetary-to-cosmic scales. <span class="web-resource-domain">illustris-project.org</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://portal.bluebrain.epfl.ch/" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Blue Brain Portal</strong> — EPFL’s hub for simulation neuroscience: models, software, atlases, and data toward digitally reconstructing and simulating brain tissue—grounding “neural telemetry” thinking in open research. <span class="web-resource-domain">portal.bluebrain.epfl.ch</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.thevenusproject.com/" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>The Venus Project</strong> — Non-profit exploring resource-based, systems-level habitat design: ecology, materials, energy, and resilience—adjacent thinking to post-scarcity cities and humane infrastructure. <span class="web-resource-domain">thevenusproject.com</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://ai-2027.com/" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>AI 2027</strong> — A concrete, quantitative scenario on how frontier AI, compute scaling, and geopolitics might unfold through 2027—forecasts, timelines, and governance stress tests from Daniel Kokotajlo, Scott Alexander, and collaborators. <span class="web-resource-domain">ai-2027.com</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.citriniresearch.com/p/2028gic" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>The 2028 Global Intelligence Crisis</strong> — A macro “memo from the future” scenario (not a forecast): how abundant machine intelligence could stress white-collar labor, consumer demand, intermediation, and credit—useful for left-tail economic and policy thinking. Citrini Research and Alap Shah. <span class="web-resource-domain">citriniresearch.com</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.huawei.com/cn/giv" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Huawei Global Industry Vision (GIV)</strong> — Long-range industry outlook on intelligent connectivity, digital infrastructure, and ICT trends—useful context for how major vendors frame compute, networks, and the intelligent world. <span class="web-resource-domain">huawei.com</span>
-                    </a>
-                </li>
-            </ul>
+        <!-- ── Web Resources ──────────────────────────────────────── -->
+        <div class="resources-panel" id="panel-web">
+            <button class="resources-panel-header" onclick="togglePanel('panel-web')" aria-expanded="false">
+                <span class="resources-panel-title">Web Resources</span>
+                <span class="resources-panel-meta">
+                    <span class="resources-count">8 links</span>
+                    <span class="resources-chevron">+</span>
+                </span>
+            </button>
+            <div class="resources-panel-body">
+                <p class="resources-intro">External writing and tools we find useful — OSINT, spatial intelligence, AI agents, and how public data composes into actionable understanding.</p>
+
+                <a href="https://www.spatialintelligence.ai/p/the-intelligence-monopoly-is-over" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">The Intelligence Monopoly Is Over</p>
+                        <p class="resource-desc">Bilawal Sidhu on reconstructing major events from open data, layered on a 3D globe, and how AI agents collapse what used to take quarters into days.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">spatialintelligence.ai</span>
+                        <span class="resource-tag">OSINT · AI</span>
+                    </div>
+                </a>
+
+                <a href="https://earth.google.com/" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">Google Earth</p>
+                        <p class="resource-desc">Interactive 3D globe with satellite imagery, terrain, and layers for exploring the planet at every scale — useful ground truth for spatial reasoning.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">earth.google.com</span>
+                        <span class="resource-tag">Spatial</span>
+                    </div>
+                </a>
+
+                <a href="https://www.illustris-project.org/" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">Illustris</p>
+                        <p class="resource-desc">Large cosmological simulation of galaxy formation — useful for thinking about emergence and structure at planetary-to-cosmic scales.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">illustris-project.org</span>
+                        <span class="resource-tag">Simulation</span>
+                    </div>
+                </a>
+
+                <a href="https://portal.bluebrain.epfl.ch/" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">Blue Brain Portal</p>
+                        <p class="resource-desc">EPFL's hub for simulation neuroscience: models, atlases, and data toward digitally reconstructing brain tissue — grounding neural telemetry thinking in open research.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">portal.bluebrain.epfl.ch</span>
+                        <span class="resource-tag">Neuroscience</span>
+                    </div>
+                </a>
+
+                <a href="https://www.thevenusproject.com/" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">The Venus Project</p>
+                        <p class="resource-desc">Non-profit exploring resource-based, systems-level habitat design — adjacent thinking to post-scarcity cities and humane infrastructure.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">thevenusproject.com</span>
+                        <span class="resource-tag">Systems</span>
+                    </div>
+                </a>
+
+                <a href="https://ai-2027.com/" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">AI 2027</p>
+                        <p class="resource-desc">A concrete, quantitative scenario on how frontier AI, compute scaling, and geopolitics might unfold through 2027 — forecasts, timelines, and governance stress tests.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">ai-2027.com</span>
+                        <span class="resource-tag">Forecasting</span>
+                    </div>
+                </a>
+
+                <a href="https://www.citriniresearch.com/p/2028gic" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">The 2028 Global Intelligence Crisis</p>
+                        <p class="resource-desc">A macro "memo from the future" on how abundant machine intelligence could stress white-collar labor, consumer demand, and credit. Citrini Research &amp; Alap Shah.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">citriniresearch.com</span>
+                        <span class="resource-tag">Economics</span>
+                    </div>
+                </a>
+
+                <a href="https://www.huawei.com/cn/giv" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">Huawei Global Industry Vision (GIV)</p>
+                        <p class="resource-desc">Long-range industry outlook on intelligent connectivity and ICT trends — context for how major vendors frame compute, networks, and the intelligent world.</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">huawei.com</span>
+                        <span class="resource-tag">Industry</span>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
 
-<section>
-    <h2>Academic Repository</h2>
+        <!-- ── Academic Repository ────────────────────────────────── -->
+        <div class="resources-panel" id="panel-academic">
+            <button class="resources-panel-header" onclick="togglePanel('panel-academic')" aria-expanded="false">
+                <span class="resources-panel-title">Academic Repository</span>
+                <span class="resources-panel-meta">
+                    <span class="resources-count">3 papers</span>
+                    <span class="resources-chevron">+</span>
+                </span>
+            </button>
+            <div class="resources-panel-body">
+                <p class="resources-intro">The neurological and sociological physics that undergird our framework.</p>
 
-    <div class="content-block" style="margin-bottom: 2rem;">
-        <p>The neurological and sociological physics that undergird our framework.</p>
-    </div>
+                <a href="https://drive.google.com/file/d/1qfJqciPQZWQgw-hsHXHNqbGMH-tLDVXK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society</p>
+                        <p class="resource-desc">Foundational Research</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">Google Drive</span>
+                        <span class="resource-tag">PDF</span>
+                    </div>
+                </a>
 
-    <div class="grid">
-        <div class="card web-resources-card">
-            <div class="tier-label">Foundational Research</div>
-            <ul class="web-resources-list">
-                <li>
-                    <a href="https://drive.google.com/file/d/1qfJqciPQZWQgw-hsHXHNqbGMH-tLDVXK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society</strong> <span class="web-resource-domain">Google Drive</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1CWVik0GMpldNX3Ri6I_v5ilILicQWlYF/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>From Individual to Society: A Survey on Social Simulation Driven by LLM-based Agents</strong> <span class="web-resource-domain">Google Drive</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1H4QB2wwwtglJcVjLCNmTHYZZQdkeGEkr/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Simulating Society Requires Simulating Thought</strong> <span class="web-resource-domain">Google Drive</span>
-                    </a>
-                </li>
-            </ul>
+                <a href="https://drive.google.com/file/d/1CWVik0GMpldNX3Ri6I_v5ilILicQWlYF/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">From Individual to Society: A Survey on Social Simulation Driven by LLM-based Agents</p>
+                        <p class="resource-desc">Foundational Research</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">Google Drive</span>
+                        <span class="resource-tag">PDF</span>
+                    </div>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1H4QB2wwwtglJcVjLCNmTHYZZQdkeGEkr/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resource-row">
+                    <div>
+                        <p class="resource-title">Simulating Society Requires Simulating Thought</p>
+                        <p class="resource-desc">Foundational Research</p>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-domain">Google Drive</span>
+                        <span class="resource-tag">PDF</span>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
 
-<section>
-    <h2>Library</h2>
+        <!-- ── Library ────────────────────────────────────────────── -->
+        <div class="resources-panel" id="panel-library">
+            <button class="resources-panel-header" onclick="togglePanel('panel-library')" aria-expanded="false">
+                <span class="resources-panel-title">Library</span>
+                <span class="resources-panel-meta">
+                    <span class="resources-count">6 books</span>
+                    <span class="resources-chevron">+</span>
+                </span>
+            </button>
+            <div class="resources-panel-body">
+                <p class="resources-intro">Longer books and shared volumes hosted on Google Drive — available to read or download.</p>
 
-    <div class="content-block" style="margin-bottom: 2rem;">
-        <p>Longer books and shared volumes hosted on Google Drive—available to read or download when links are published.</p>
-    </div>
-
-    <div class="grid">
-        <div class="card web-resources-card">
-            <div class="tier-label">Books</div>
-            <p class="library-placeholder">Google Drive links will be added here.</p>
-            <ul class="web-resources-list library-books-list">
-                <li>
-                    <a href="https://drive.google.com/file/d/1JpegngCRaVQmqud7l7ZyWuxxTB16vwFA/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>The Venus Project: The Redesign of a Culture</strong> — Jacque Fresco <span class="web-resource-domain">Google Drive</span>
+                <div class="books-grid">
+                    <a href="https://drive.google.com/file/d/1JpegngCRaVQmqud7l7ZyWuxxTB16vwFA/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="book-card">
+                        <p class="book-title">The Venus Project: The Redesign of a Culture</p>
+                        <p class="book-author">Jacque Fresco</p>
+                        <span class="book-domain">Google Drive</span>
                     </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1aZ39aEtY-IICrMYKfkW-NXY6YO8LcGB4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>The People’s Republic of Walmart</strong> — Leigh Phillips &amp; Michal Rozworski <span class="web-resource-domain">Google Drive</span>
+                    <a href="https://drive.google.com/file/d/1aZ39aEtY-IICrMYKfkW-NXY6YO8LcGB4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="book-card">
+                        <p class="book-title">The People's Republic of Walmart</p>
+                        <p class="book-author">Leigh Phillips &amp; Michal Rozworski</p>
+                        <span class="book-domain">Google Drive</span>
                     </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1Rg449iVDK091gqdwRxSQzxW2jODLChMF/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Towards a New Socialism</strong> — W. Paul Cockshott &amp; Allin F. Cottrell <span class="web-resource-domain">Google Drive</span>
+                    <a href="https://drive.google.com/file/d/1Rg449iVDK091gqdwRxSQzxW2jODLChMF/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="book-card">
+                        <p class="book-title">Towards a New Socialism</p>
+                        <p class="book-author">W. Paul Cockshott &amp; Allin F. Cottrell</p>
+                        <span class="book-domain">Google Drive</span>
                     </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1gjSwLxSC3Hm5R2iymTmFsfa2mEo_FmyX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Fully Automated Luxury Communism: A Manifesto</strong> — Aaron Bastani <span class="web-resource-domain">Google Drive</span>
+                    <a href="https://drive.google.com/file/d/1gjSwLxSC3Hm5R2iymTmFsfa2mEo_FmyX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="book-card">
+                        <p class="book-title">Fully Automated Luxury Communism: A Manifesto</p>
+                        <p class="book-author">Aaron Bastani</p>
+                        <span class="book-domain">Google Drive</span>
                     </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1KNljZBsshdPOtSDi-Bw5lob1qzZerNWo/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Deep Utopia: Life and Meaning in a Solved World</strong> — Nick Bostrom <span class="web-resource-domain">Google Drive</span>
+                    <a href="https://drive.google.com/file/d/1KNljZBsshdPOtSDi-Bw5lob1qzZerNWo/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="book-card">
+                        <p class="book-title">Deep Utopia: Life and Meaning in a Solved World</p>
+                        <p class="book-author">Nick Bostrom</p>
+                        <span class="book-domain">Google Drive</span>
                     </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1zkhWEh0fOBB6nWtIQW7c73epp3xv3uI-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="web-resource-link">
-                        <strong>Designing the Future</strong> — Jacque Fresco <span class="web-resource-domain">Google Drive</span>
+                    <a href="https://drive.google.com/file/d/1zkhWEh0fOBB6nWtIQW7c73epp3xv3uI-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="book-card">
+                        <p class="book-title">Designing the Future</p>
+                        <p class="book-author">Jacque Fresco</p>
+                        <span class="book-domain">Google Drive</span>
                     </a>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
+
     </div>
+
+
 </section>
